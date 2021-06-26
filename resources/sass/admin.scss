@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap');
 
 #hedarSkin {
-  background-image: url("/img/guitar.png");
+  background-image: url("/img/guitar_1.jpg");
   background-repeat: no-repeat;
-  background-size: 90px;
-  padding: 50px 100px 30px 10px;
+  background-size: 30px;
+  padding: 50px 50px 30px 10px;
   &:hover {
-    background-image: url("/img/eleguitar.png");
+    background-image: url("/img/guitar_2.jpg");
   }
 }
 
@@ -17,13 +17,6 @@ textarea {
   @include sitefont;
 }
 
-// ナビゲーション携帯レスポンシブ
-.navbar-nav {
-  padding-left: 380px;
-  @include iphone-12-max() {
-    padding: 0px;
-  }
-}
 
 // スマホ版
 @media screen and (max-width: 480px) {
@@ -112,8 +105,118 @@ a {
   @include sitefont;
 }
 
+.desc-text {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
 // 終わり
 // ここからはskin共通！
+// ナビゲーション携帯レスポンシブ
+.nav {
+  @include iphone-12-max() {
+    display: none;
+  }
+}
+
+.td-block {
+  display: inline-block;
+}
+
+/*ナビのスタイル*/
+nav.navMenu{
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  background: lightblue;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+    ul {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+    li {
+      font-size: 24px;
+      list-style-type: none;
+      width: 100%;
+      padding-bottom: 0px;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      a {
+        display: block;
+        color: #fff;
+        padding: 15px 0;
+        font-weight: bold;
+        font-size: 38px;
+      }
+    }
+  }
+  
+  
+  /*ボタンのスタイル*/
+  .hamburgar {
+    position: fixed;
+    right:18px;
+    top: 3px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 13;
+    display: block;
+    @media screen and (min-width: 854px) {
+      display: none;
+    }
+    span {
+      display: block;
+      position: absolute;
+      width: 35px;
+      border-bottom: solid 4px #C1C1C1;
+      -webkit-transition: .35s ease-in-out;
+      -moz-transition: .35s ease-in-out;
+      transition: .35s ease-in-out;
+      left: 6px;
+      &:nth-child(1) {
+        top: 10px;
+      }
+      &:nth-child(2) {
+        top: 20px;
+      }
+      &:nth-child(3) {
+        top: 30px;
+      }
+    }
+    .active {
+      span {
+        &:nth-child(1) {
+          top: 18px;
+          left: 6px;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          border-bottom: solid 3px #C1C1C1;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 18px;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+          border-bottom: solid 3px #C1C1C1;
+        }
+      }
+    }
+  }
+  
+  
 
 #preview {
   @include preview-font;
@@ -257,35 +360,35 @@ h1 a{
 }
 .cord-1 {
  @include cord;
- background-color: red;
+ background-color: orange;
 }
 .cord-2 {
   @include cord;
-  background-color: blue;
+  background-color: orange;
  }
  .cord-3 {
   @include cord;
-  background-color: lightskyblue;
+  background-color: orange;
  }
  .cord-4 {
   @include cord;
-  background-color: green;
+  background-color: orange;
  }
  .cord-5 {
   @include cord;
-  background-color: brown;
+  background-color: orange;
  }
  .cord-6 {
   @include cord;
-  background-color: purple;
+  background-color: orange;
  }
  .cord-7 {
   @include cord;
-  background-color: pink;
+  background-color: orange;
  }
  .cord-8 {
   @include cord;
-  background-color: black;
+  background-color: orange;
  }
  .cord-9 {
   @include cord;
@@ -293,15 +396,15 @@ h1 a{
  }
  .cord-10 {
   @include cord;
-  background-color: lightgreen;
+  background-color: orange;
  }
  .cord-11 {
   @include cord;
-  background-color: gold;
+  background-color: orange;
  }
  .cord-12 {
   @include cord;
-  background-color: silver;
+  background-color: orange;
  }
 
 img {

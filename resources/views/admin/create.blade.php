@@ -26,7 +26,7 @@
         </div>
         <div class="form-group row">
             <label class="col-md-2" for="category" >カテゴリー</label>
-            <div class="col-10">
+            <div class="col-4">
                 <select class="form-control mb-3" name="category" value="{{ old('category') }}">
                         <option value="なし" selected  @if(old('category')=='なし') selected  @endif>なし</option>
                         <option value="洋楽" @if(old('category')=='洋楽') selected  @endif>洋楽</option>
@@ -36,13 +36,11 @@
                         <option value="ジブリ"  @if(old('category')=='ジブリ') selected  @endif>ジブリ</option>
                 </select>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-md-2" for="capo">設定するカポ数</label>
-                <div class="col-10">
+            <label class="col-md-1" for="capo">カポ数</label>
+                <div class="col-5">
                     <select class="form-control mb-3" name = "capo" value="{{ old('capo') }}">
                         <option value="半音"  @if(old('capo')=='半音') selected  @endif>半音</option>
-                        <option value="+-0" selected @if(old('capo')=='±0') selected  @endif>±0</option>
+                        <option value="±0" selected @if(old('capo')=='±0') selected  @endif>±0</option>
                         <option value="+1" @if(old('capo')=='+1') selected  @endif>+1</option>
                         <option value="+2" @if(old('capo')=='+2') selected  @endif>+2</option>
                         <option value="+3" @if(old('capo')=='+3') selected  @endif>+3</option>
@@ -60,24 +58,25 @@
                 <input type="text" class="form-control" name="video_link" value="{{ old('video_link') }}">
             </div>
         </div>
-            <div class="row">
-                <select id="selectCords" onchange="keyChange();" class="form-control">
-                    <option value="1">C = Am</option>
-                    <option value="2">C# = A#m</option>
-                    <option value="3">D = Bm</option>
-                    <option value="4">E♭ = Cm</option>
-                    <option value="5">E = C#m</option>
-                    <option value="6">F = Dm</option>
-                    <option value="7">F# = D#m</option>
-                    <option value="8">G = Em</option>
-                    <option value="9">A♭ = Fm</option>
-                    <option value="10">A = F#m</option>
-                    <option value="11">B♭ = Gm</option>
-                    <option value="12">B = G#m</option>
-                </select>
-
-                <div class="col-12 my-5">
-                    <div id="otherCords">
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <span style="font-size:10px;">キーを選択</span>
+                    <select id="selectCords" onchange="keyChange();" class="form-control">
+                        <option value="1">C = Am</option>
+                        <option value="2">C# = A#m</option>
+                        <option value="3">D = Bm</option>
+                        <option value="4">E♭ = Cm</option>
+                        <option value="5">E = C#m</option>
+                        <option value="6">F = Dm</option>
+                        <option value="7">F# = D#m</option>
+                        <option value="8">G = Em</option>
+                        <option value="9">A♭ = Fm</option>
+                        <option value="10">A = F#m</option>
+                        <option value="11">B♭ = Gm</option>
+                        <option value="12">B = G#m</option>
+                    </select>
+                    <div class="my-3" id="otherCords">
+                        <span style="font-size:5px;">よく使うコード</span>
                         <div id="key_C">
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[C]');">C</button>
                             <button type="button"class="btn btn-outline-primary m-1" onclick="chord_insert('[Dm]');">Dm</button>
@@ -281,19 +280,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="mb-3 col-md-6 desc-text">
+                    <h4>コードの書き方</h4>
+                    <p>キーを選択するとその下によく使うコードが表示されます。<br>
+                    コード名のボタンを押すことで簡単にコードが入力できます</p>
+                    <p>入力するとプレビューが表示されるのでプレビューを見ながら簡単に作れます。</p>
+                    <p>コードチェンジをしたい歌詞の前にコードを置いてください。<br>
+                    例: [C]君を忘れな[G]い</p>
+                </div>
+            </div>
 
                 <div class="creata-text">
-                <textarea placeholder="歌詞、コードを入力" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 134px; width: 555px;"></textarea>
+                    <textarea placeholder="歌詞、コードを入力　例: [C]君を忘れな[G]い" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 134px; width: 1055px;"></textarea>
                 </div>
                 
-                <div class="ml-3 desc-text">
-                    <h4>コードの書き方</h4>
-                    <p>テキストの端まで行ったら、必ず改行してください</p>
-                    <p>※これはメインで視聴するのはスマホ画面ですのでレイアウトを合わせるためです。</p>
-                </div>
                     <p class="col-12 my-5" id="preview">
-                    </p>
-                </div> 
+                    </p> 
                 @csrf
                 <input type="submit" class="btn btn-primary mb-5" value="追加する">
             </div>

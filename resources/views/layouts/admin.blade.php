@@ -69,11 +69,24 @@
                         <span id="logo-hedar"></span>
                         <span id="logo-hidden"></span>
                         <div class="container">
-                            <div class="row">
+                                <a href="home"><div id="hedarSkin"></div></a>
+                                    <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
 
-                                 <div class="col-2">
-                                    <a href="home"><div id="hedarSkin"></div></a>
-                                </div>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
                             @guest
                                 <ul class="navbar-nav mr-auto" style="padding-left: 0px;">
                                     <!-- ログインリンク -->
@@ -99,52 +112,37 @@
                                     </header>
                                 </ul>
                             @else
-                                <div class="col-1" style="padding-top: 20px;">
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                        </a>
+                                <ul class="navbar-nav mr-auto">
 
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                </div>
-                                <div class="col">
-                                    <header>
-                                        <ul>
-                                            <li><a id="mypage" href = "mypage" >マイページ</a></li>
-                                            <li><a id="create" href = "create" >曲の作成</a></li>
-                                            <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
-                                        </ul>
-                                    </header>
-                                </div>
-                            </div>
-                                
-                            <div class="hamburger">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                                <nav class="menu">
-                                    <ul>
+                                </ul>
+                                <ul class="navbar-nav ml-auto" style="margin: 0px;">
+                                <header>
+                                    <ul class="nav">
                                         <li><a id="mypage" href = "mypage" >マイページ</a></li>
                                         <li><a id="create" href = "create" >曲の作成</a></li>
                                         <li><a id="musicCords" href = "cord" >ギターのコード一覧</a></li>
                                     </ul>
-                                </nav>
+                                </header>
+                                </ul>
+                            </div>
+                            <nav class="navMenu">
+                                <ul>
+                                    <li><a href="mypage">マイページ</a></li>
+                                    <li><a href="create">曲の作成</a></li>
+                                    <li><a href="cord">ギターコード一覧</a></li>
+                                </ul>
+                            </nav>
+
+                            <!-- メニュー -->
+                            <div class="hamburgar">
+                                <span class="toggle-span"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
                                                             
                             @endguest
                         </div>
-                    </div>
                 </nav>
 
                 <main>

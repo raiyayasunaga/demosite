@@ -3,8 +3,24 @@
 @section('title', 'ホームページ')
 
 @section('style')
-<!-- 多分この中にlinkをforeachで追記する -->
 <style>
+body {
+  background: linear-gradient(-45deg, orange, lightblue, lightgreen);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 40% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 40% 0%;
+  }
+}
 </style>
 @endsection
 
