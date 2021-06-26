@@ -70,7 +70,32 @@
                         <span id="logo-hidden"></span>
                         <div class="container">
                                 <a href="home"><div id="hedarSkin"></div></a>
-                                    <li class="nav-item dropdown">
+                            @guest
+                                <ul class="navbar-nav mr-auto" style="padding-left: 0px;">
+                                    <!-- ログインリンク -->
+                                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                                </ul>
+                                    <!-- 右サイドバー -->
+                                <ul class="navbar-nav ml-auto" style="padding-left: 0px;">
+                                        @if (Route::has('register'))
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                        @endif
+                                        </li>
+                                    <header>
+                                    <!-- ログイン前はadminをつける必要がある -->
+                                        <div>
+                                            <ul class="nav">
+                                                <li><a href = "admin/mypage">マイページ</a></li>
+                                                <li><a href = "admin/create">曲の作成</a></li>
+                                                <li><a href = "admin/cord">ギターのコード一覧</a></li>
+                                            </ul>
+                                        </div>
+                                    </header>
+                                </ul>
+                            @else
+                            <li class="nav-item dropdown">
                                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
@@ -87,31 +112,6 @@
                                             </form>
                                         </div>
                                     </li>
-                            @guest
-                                <ul class="navbar-nav mr-auto" style="padding-left: 0px;">
-                                    <!-- ログインリンク -->
-                                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                                </ul>
-                                    <!-- 右サイドバー -->
-                                <ul class="navbar-nav ml-auto" style="padding-left: 0px;">
-                                        @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
-                                        @endif
-                                        </li>
-                                    <header>
-                                    <!-- ログイン前はadminをつける必要がある -->
-                                        <div style="">
-                                            <ul>
-                                                <li><a href = "admin/mypage">マイページ</a></li>
-                                                <li><a href = "admin/create">曲の作成</a></li>
-                                                <li><a href = "admin/cord">ギターのコード一覧</a></li>
-                                            </ul>
-                                        </div>
-                                    </header>
-                                </ul>
-                            @else
                                 <ul class="navbar-nav mr-auto">
 
                                 </ul>
