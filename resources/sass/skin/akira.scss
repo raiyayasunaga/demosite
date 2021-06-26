@@ -1,0 +1,216 @@
+@import "skinFuction";
+
+#hedarSkin {
+  background-image: url("/img/kaneda.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  padding: 50px 100px 30px 10px;
+  &:hover {
+    background-image: url("/img/tetuo.png");
+  }
+  &:active {
+    background-image: url("/img/kaneda_angry.png");
+  }
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;  /* 背景カラー */
+  z-index: 9;  /* 一番手前に */
+  pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
+  opacity: 0;  /* 初期値 : 透過状態 */
+  -webkit-transition: opacity 1.5s;  /* アニメーション時間は 0.8秒 */
+  transition: opacity 1.5s;
+}
+
+body.fadeout::after {
+  opacity: 1;
+}
+
+body.fadeout article{
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+}
+
+h1 a{
+  color: $sinnzi-color-green;
+  @include hederfont;
+  font-weight: 900;
+   &:hover {
+     text-decoration: none;
+     color: $sinnzi-color-orenge;
+     opacity: 0.8;
+   }
+ }
+ li {
+   list-style: none;
+ }
+ 
+ ul {
+     overflow:hidden;
+     list-style:none;
+     margin: 0 auto;
+     z-index: 20;
+     margin-left: 10px;
+     @include hederfont;
+     font-weight: 900;
+    li {
+     display: inline-block;
+     padding: 26px 10px 20px 10px;
+     list-style: none;
+
+       a {
+       font-size: 20px;
+       color: $sinnzi-color-green;
+         &:hover {
+           text-decoration: none;
+           color: $sinnzi-color-orenge;
+           }
+         }
+       }
+    } 
+
+.navbar-laravel {
+  background-color: $sinnzi-color-purple;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+.navbar-brand {
+  color: #fff !important;
+}
+
+.nav-link {
+  color: $sinnzi-color-green !important;
+}
+
+// ここからはskin共通！
+
+#preview {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+#lyrics {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+// ナビゲーション携帯レスポンシブ
+.navbar-nav {
+  padding-left: 380px;
+  @include iphone-12-max() {
+    padding: 0px;
+  }
+}
+// ストップボタン
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+
+@include iphone-12-max() {
+  .stopbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+  .movebutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 150px;
+  }
+  .moveslowbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+}
+// ギターコードの編集
+#cordbackground {
+  background: #c8ffad;
+}
+
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+.cord-1 {
+ @include cord;
+ background-color: red;
+}
+.cord-2 {
+  @include cord;
+  background-color: blue;
+ }
+ .cord-3 {
+  @include cord;
+  background-color: lightskyblue;
+ }
+ .cord-4 {
+  @include cord;
+  background-color: green;
+ }
+ .cord-5 {
+  @include cord;
+  background-color: brown;
+ }
+ .cord-6 {
+  @include cord;
+  background-color: purple;
+ }
+ .cord-7 {
+  @include cord;
+  background-color: pink;
+ }
+ .cord-8 {
+  @include cord;
+  background-color: black;
+ }
+ .cord-9 {
+  @include cord;
+  background-color: orange;
+ }
+ .cord-10 {
+  @include cord;
+  background-color: lightgreen;
+ }
+ .cord-11 {
+  @include cord;
+  background-color: gold;
+ }
+ .cord-12 {
+  @include cord;
+  background-color: silver;
+ }
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.cord-font {
+  @include cord-font;
+
+  &:hover {
+    color:brown;
+    text-decoration: none;
+  }
+}
+
+
+

@@ -1,0 +1,389 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap);#hedarSkin {
+  background-image: url("/img/ayanami.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  padding: 50px 100px 30px 10px;
+}
+
+h1 a {
+  color: #fff;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 900;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  color: #eb9916;
+  opacity: 0.8;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  overflow: hidden;
+  list-style: none;
+  margin: 0 auto;
+  z-index: 20;
+  margin-left: 10px;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 900;
+}
+
+ul li {
+  display: inline-block;
+  padding: 26px 10px 20px 10px;
+  list-style: none;
+}
+
+ul li a {
+  font-size: 20px;
+  color: #fff;
+}
+
+ul li a:hover {
+  text-decoration: none;
+  color: #eb9916;
+}
+
+.navbar-laravel {
+  background-color: #eea20c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+#preview {
+  color: #db1024;
+  font-weight: bold;
+}
+
+#preview img {
+  width: 70px;
+  margin-bottom: 90px;
+  margin-right: -30px;
+}
+
+#lyrics {
+  color: #db1024;
+  font-weight: bold;
+}
+
+#lyrics img {
+  width: 70px;
+  margin-bottom: 90px;
+  margin-right: -30px;
+}
+
+.navbar-nav {
+  padding-left: 380px;
+}
+
+@media screen and (max-width: 854px) {
+  .navbar-nav {
+    padding: 0px;
+  }
+}
+
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+
+@media screen and (max-width: 854px) {
+  .stopbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+
+  .movebutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 150px;
+  }
+
+  .moveslowbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+}
+
+#cordbackground {
+  background: #c8ffad;
+}
+
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+
+.cord-1 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: red;
+}
+
+.cord-1:hover {
+  opacity: 0.8;
+}
+
+.cord-1 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-1 a:hover {
+  text-decoration: none;
+}
+
+.cord-2 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: blue;
+}
+
+.cord-2:hover {
+  opacity: 0.8;
+}
+
+.cord-2 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-2 a:hover {
+  text-decoration: none;
+}
+
+.cord-3 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: lightskyblue;
+}
+
+.cord-3:hover {
+  opacity: 0.8;
+}
+
+.cord-3 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-3 a:hover {
+  text-decoration: none;
+}
+
+.cord-4 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: green;
+}
+
+.cord-4:hover {
+  opacity: 0.8;
+}
+
+.cord-4 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-4 a:hover {
+  text-decoration: none;
+}
+
+.cord-5 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: brown;
+}
+
+.cord-5:hover {
+  opacity: 0.8;
+}
+
+.cord-5 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-5 a:hover {
+  text-decoration: none;
+}
+
+.cord-6 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: purple;
+}
+
+.cord-6:hover {
+  opacity: 0.8;
+}
+
+.cord-6 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-6 a:hover {
+  text-decoration: none;
+}
+
+.cord-7 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: pink;
+}
+
+.cord-7:hover {
+  opacity: 0.8;
+}
+
+.cord-7 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-7 a:hover {
+  text-decoration: none;
+}
+
+.cord-8 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.cord-8:hover {
+  opacity: 0.8;
+}
+
+.cord-8 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-8 a:hover {
+  text-decoration: none;
+}
+
+.cord-9 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: orange;
+}
+
+.cord-9:hover {
+  opacity: 0.8;
+}
+
+.cord-9 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-9 a:hover {
+  text-decoration: none;
+}
+
+.cord-10 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: lightgreen;
+}
+
+.cord-10:hover {
+  opacity: 0.8;
+}
+
+.cord-10 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-10 a:hover {
+  text-decoration: none;
+}
+
+.cord-11 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: gold;
+}
+
+.cord-11:hover {
+  opacity: 0.8;
+}
+
+.cord-11 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-11 a:hover {
+  text-decoration: none;
+}
+
+.cord-12 {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: silver;
+}
+
+.cord-12:hover {
+  opacity: 0.8;
+}
+
+.cord-12 a {
+  display: flex;
+  color: #fff;
+}
+
+.cord-12 a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.cord-font {
+  font-size: 23px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: blod;
+  background-color: #ececec;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+}
+
+.cord-font:hover {
+  color: brown;
+  text-decoration: none;
+}
+

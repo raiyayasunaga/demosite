@@ -1,0 +1,295 @@
+@import "skinFuction";
+
+#hedarSkin {
+  background-image: url("/img/shogouki.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  padding: 50px 100px 30px 10px;
+  &:hover {
+    background-image: url("/img/shogouki_kakusei.png");
+  }
+  &:active {
+    background-image: url("/img/shogouki_angry.png");
+  }
+}
+
+textarea {
+  overflow: auto;
+}
+
+.button-link {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  margin-top: 30px;
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
+//ハンバーガーメニュー 
+
+
+//アニメーション
+body::after {
+  @include body-animation;
+  background-color: $NERV-red;  /* 背景カラー */
+}
+
+body.fadeout::after {
+  opacity: 1;
+}
+
+body.fadeout article{
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+}
+
+
+// home画像編集
+#background-home-image{
+  @include background-image;
+    li {
+      @include background-image-li;
+      animation: anime 60s linear 0s infinite ;
+    }
+}
+#background-home-image li:nth-child(1) { 
+    background-image: url("/img/shogoukibg2.jpg");   /* 背景画像を入力して下さい */
+}
+#background-home-image li:nth-child(2) {
+    background-image: url("/img/shogoukibg1.jpg");
+    animation-delay: 15s;
+}
+#background-home-image li:nth-child(3) {
+    background-image: url("/img/sinnzibg1.jpg");
+    animation-delay: 30s;
+}
+#background-home-image li:nth-child(4) {
+    background-image: url("/img/sinnzibg2.jpg");
+    animation-delay: 45s;
+}
+@keyframes anime { 
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    10% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1.2);
+            animation-timing-function: ease-out;
+        opacity: 0;
+    }
+    100% { opacity: 0 }
+}
+// home背景画像終わり
+
+// mypage背
+#background-mypage-image {
+  @include background-image;
+  li {
+    @include background-image-li;
+    animation: anime 60s linear 0s infinite ;
+    &:nth-child(1) { 
+      background-image: url("/img/evabg1.jpg");   /* 背景画像を入力して下さい */
+    }
+    &:nth-child(2) {
+      background-image: url("/img/evabg2.jpg");
+      animation-delay: 15s;
+    }
+    &:nth-child(3) {
+      background-image: url("/img/evabg3.jpg");
+      animation-delay: 30s;
+    }
+    &:nth-child(4) {
+      background-image: url("/img/evabg4.jpg");
+      animation-delay: 45s;
+    }
+  }
+}
+
+h1 a{
+  color: $sinnzi-color-green;
+  @include hederfont;
+  font-weight: 900;
+   &:hover {
+     text-decoration: none;
+     color: $sinnzi-color-orenge;
+     opacity: 0.8;
+   }
+ }
+ li {
+   list-style: none;
+ }
+ 
+ ul {
+     overflow:hidden;
+     list-style:none;
+     margin: 0 auto;
+     z-index: 20;
+     margin-left: 10px;
+     @include hederfont;
+     font-weight: 900;
+    li {
+     display: inline-block;
+     padding: 20px 10px;
+     list-style: none;
+
+       a {
+       font-size: 20px;
+       color: $sinnzi-color-green;
+         &:hover {
+           text-decoration: none;
+           color: $sinnzi-color-orenge;
+           }
+         }
+       }
+    } 
+
+.navbar-laravel {
+  background-color: $sinnzi-color-purple;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.nav-link {
+  color: $sinnzi-color-green !important;
+}
+
+// ナビゲーション携帯レスポンシブ
+.navbar-nav {
+  padding-left: 380px;
+  @include iphone-12-max() {
+    padding: 0px;
+  }
+}
+
+
+// ここからはskin共通！
+
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+#preview {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+#lyrics {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+// ストップボタン
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+@include iphone-12-max() {
+  .stopbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+  .movebutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 150px;
+  }
+  .moveslowbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+}
+
+.navbar-toggler {
+  background-color: $sinnzi-color-green;
+}
+
+// ギターコードの編集
+#cordbackground {
+  background: #c8ffad;
+}
+
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+.cord-1 {
+ @include cord;
+ background-color: red;
+}
+.cord-2 {
+  @include cord;
+  background-color: blue;
+ }
+ .cord-3 {
+  @include cord;
+  background-color: lightskyblue;
+ }
+ .cord-4 {
+  @include cord;
+  background-color: green;
+ }
+ .cord-5 {
+  @include cord;
+  background-color: brown;
+ }
+ .cord-6 {
+  @include cord;
+  background-color: purple;
+ }
+ .cord-7 {
+  @include cord;
+  background-color: pink;
+ }
+ .cord-8 {
+  @include cord;
+  background-color: black;
+ }
+ .cord-9 {
+  @include cord;
+  background-color: orange;
+ }
+ .cord-10 {
+  @include cord;
+  background-color: lightgreen;
+ }
+ .cord-11 {
+  @include cord;
+  background-color: gold;
+ }
+ .cord-12 {
+  @include cord;
+  background-color: silver;
+ }
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.cord-font {
+  @include cord-font;
+  &:hover {
+    color:brown;
+    text-decoration: none;
+  }
+}
+

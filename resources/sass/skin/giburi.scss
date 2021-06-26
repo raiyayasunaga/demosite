@@ -1,0 +1,343 @@
+@import "skinFuction";
+
+#hedarSkin {
+  background-image: url("/img/asitaka.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  padding: 50px 100px 30px 10px;
+  &:hover {
+    background-image: url("/img/asitaka2.png");
+  }
+  &:active {
+    background-image: url("/img/asitaka3.png");
+  background-size: 130px;
+  }
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine; /* 背景カラー */
+  z-index: 9;  /* 一番手前に */
+  pointer-events: none;  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
+  opacity: 0;  /* 初期値 : 透過状態 */
+  -webkit-transition: opacity 0.8s;  /* アニメーション時間は 0.8秒 */
+  transition: opacity 0.8s;
+}
+
+#bgskin-mypage {
+  background-image: url("/img/chihiro.png");
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-size: 1440px;
+  padding: 0px;
+  height: auto;
+  z-index: 3;
+}
+
+// home背景画像
+
+#background-home-image{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+    li {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: none;
+      opacity: 0;
+      animation: anime 60s linear 0s infinite ;
+    }
+}
+#background-home-image li:nth-child(1) { 
+    background-image: url("/img/howl1.png");   /* 背景画像を入力して下さい */
+}
+#background-home-image li:nth-child(2) {
+    background-image: url("/img/mononoke1.png");
+    animation-delay: 15s;
+}
+#background-home-image li:nth-child(3) {
+    background-image: url("/img/kokuriko1.png");
+    animation-delay: 30s;
+}
+#background-home-image li:nth-child(4) {
+    background-image: url("/img/nekono1.png");
+    animation-delay: 45s;
+}
+@keyframes anime { 
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    10% {
+        transform: scale(1.1);
+        opacity: 0.2;
+    }
+    40% {
+        transform: scale(1.2);
+            animation-timing-function: ease-out;
+        opacity: 0;
+    }
+    100% { opacity: 0 }
+}
+// home背景画像終わり
+
+// mypage背
+#background-mypage-image {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  li {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: none;
+    opacity: 0;
+    animation: anime 75s linear 0s infinite ;
+    &:nth-child(1) { 
+      background-image: url("/img/howl1bg.jpg");   /* 背景画像を入力して下さい */
+    }
+    &:nth-child(2) {
+      background-image: url("/img/totoro1bg.jpg");
+      animation-delay: 15s;
+    }
+    &:nth-child(3) {
+      background-image: url("/img/buta1bg.jpg");
+      animation-delay: 30s;
+    }
+    &:nth-child(4) {
+      background-image: url("/img/kazetatinu1bg.jpg");
+      animation-delay: 45s;
+    }
+    &:nth-child(5) {
+      background-image: url("/img/marnie1bg.jpg");
+      animation-delay: 60s;;
+    }
+  }
+}
+
+// mypage背景画像終わり
+
+h1 a{
+  color: $sinnzi-color-green;
+  @include hederfont;
+  font-weight: 900;
+   &:hover {
+     text-decoration: none;
+     color: $sinnzi-color-orenge;
+     opacity: 0.8;
+   }
+ }
+ li {
+   list-style: none;
+ }
+ 
+ ul {
+     overflow:hidden;
+     list-style:none;
+     margin: 0 auto;
+     z-index: 20;
+     margin-left: 10px;
+     @include hederfont;
+     font-weight: 900;
+    li {
+     display: inline-block;
+     padding: 26px 10px 20px 10px;
+     list-style: none;
+       a {
+       font-size: 20px;
+       color: $sinnzi-color-green;
+        #mypage {
+          // 何故か反応しない
+          background-image: url("/img/mypage.png");
+          &:hover{
+            background-image: url("/img/mypage.png");
+            background-repeat: no-repeat;
+            background-size: 100px;
+          }
+        }
+         &:hover {
+          text-decoration: none;
+          color: #664125;
+          }
+         }
+       }
+    } 
+
+#logo-hedar {
+  background-image: url("/img/totoro1.jpg");
+  background-repeat: no-repeat;
+  z-index: 3;
+  background-size: 130px;
+  padding: 40px 120px 50px 30px;
+  position: absolute;
+  top: 10px;
+  left: 400px;
+}
+#logo-hidden {
+  padding: 45px;
+  z-index: 4;
+  position: absolute;
+  left: 550px;
+    &:hover {
+      background-image: url("/img/ariethii.png");
+      background-repeat: no-repeat;
+      background-size: 80px;
+    }
+}
+  .navbar-laravel {
+  background-color: green;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+.navbar-brand {
+  color: #fff !important;
+}
+
+.nav-link {
+  color: $sinnzi-color-green !important;
+}
+
+// ここからはskin共通！
+
+#preview {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+#lyrics {
+  @include preview-font;
+  img {
+    @include preview-image;
+  }
+}
+
+// ナビゲーション携帯レスポンシブ
+.navbar-nav {
+  padding-left: 380px;
+  @include iphone-12-max() {
+    padding: 0px;
+  }
+}
+// ストップボタン
+.stopbutton {
+  position: fixed;
+  padding: 20px 30px 20px 30px;
+  left: 1270px;
+}
+@include iphone-12-max() {
+  .stopbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+  .movebutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 150px;
+  }
+  .moveslowbutton {
+    position: fixed;
+    padding: 5px 15px;
+    left: 660px;
+    top: 230px;
+  }
+}
+
+// ギターコードの編集
+#cordbackground {
+  background: #c8ffad;
+}
+
+.cordmenu {
+  display: flex;
+  justify-content: center;
+}
+.cord-1 {
+ @include cord;
+ background-color: red;
+}
+.cord-2 {
+  @include cord;
+  background-color: blue;
+ }
+ .cord-3 {
+  @include cord;
+  background-color: lightskyblue;
+ }
+ .cord-4 {
+  @include cord;
+  background-color: green;
+ }
+ .cord-5 {
+  @include cord;
+  background-color: brown;
+ }
+ .cord-6 {
+  @include cord;
+  background-color: purple;
+ }
+ .cord-7 {
+  @include cord;
+  background-color: pink;
+ }
+ .cord-8 {
+  @include cord;
+  background-color: black;
+ }
+ .cord-9 {
+  @include cord;
+  background-color: orange;
+ }
+ .cord-10 {
+  @include cord;
+  background-color: lightgreen;
+ }
+ .cord-11 {
+  @include cord;
+  background-color: gold;
+ }
+ .cord-12 {
+  @include cord;
+  background-color: silver;
+ }
+
+img {
+  width: 200px;
+  height: auto;
+  border: 2px solid #000;
+}
+
+.cord-font {
+  @include cord-font;
+
+  &:hover {
+    color:brown;
+    text-decoration: none;
+  }
+}
+
+

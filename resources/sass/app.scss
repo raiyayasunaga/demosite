@@ -1,0 +1,122 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+nav {
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--nav-background);
+}
+
+.logo h1 {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* nav-links */
+
+.nav-links {
+  display: flex;
+  height: var(--nav-height);
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0 15px;
+  height: var(--nav-height);
+  line-height: var(--nav-height);
+  text-align: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(99, 99, 99);
+  position: relative;
+}
+
+/* menu */
+
+.menu {
+  cursor: pointer;
+  background: var(--nav-background);
+  border: none;
+  outline: none;
+  display: none;
+}
+
+.menu .bar {
+  width: 20px;
+  height: 2px;
+  background: #000;
+  border-radius: 5px;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s ease;
+  transform-origin: left;
+}
+
+.menu .bar1 {
+  margin-bottom: 5px;
+}
+
+.menu .bar3 {
+  margin-top: 5px;
+}
+
+.menu.toggle .bar1 {
+  transform-origin: left;
+  transform: rotate(45deg);
+}
+
+.menu.toggle .bar2 {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu.toggle .bar3 {
+  transform-origin: left;
+  transform: rotate(-45deg);
+}
+
+/* responsive */
+
+@media screen and (max-width: 700px) {
+  .nav-links {
+       flex-direction: column;
+       position: fixed;
+       top: 0;
+       left: 100%;
+       width: 300px;
+       height: 100%;
+       background: var(--nav-background);
+       margin-top: var(--nav-height);
+       transition: 0.5s ease-out;
+  }
+  .nav-links li {
+       height: var(--nav-height);
+       line-height: var(--nav-height);
+       text-align: center;
+       width: 100%;
+       display: block;
+  }
+  .menu {
+       display: block;
+       margin-left: auto;
+  }
+
+  .menu.toggle + .nav-links {
+       transform: translateX(-100%);
+  }
+}
