@@ -33,7 +33,7 @@ body {
 </ul>
     <div class="container">
         <div class="row">
-            <h2><a class="button-link" href = "{{ action('Admin\ProfileController@edit') }}"><img src="{{ asset('storage/profile/', $user->profile_image) }}" style="width: 50px; hieght: auto;">プロフィール編集</a></h2>
+            <h2><a class="button-link" href = "{{ action('Admin\ProfileController@edit') }}"><img src="{{ $user->profile_image }}" style="width: 50px; hieght: auto;">プロフィール編集</a></h2>
         </div>
         <div class="row my-3">
             <div class="col-md-4">

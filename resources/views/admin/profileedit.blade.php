@@ -22,7 +22,7 @@
       <div class="row">
           <div class="col-md-3">
             <div>現在のプロフィール画像</div>
-            <img src="{{ asset('storage/profile/', $user->profile_image) }}" style="width: 100px;">
+            <img src="{{ $user->profile_image }}" style="width: 100px;">
           </div>
 
           <div class="col-md-3">

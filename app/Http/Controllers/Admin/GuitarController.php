@@ -8,6 +8,7 @@ use App\Music;
 use App\User;
 use App\Skin;
 use Image;
+use Storage;
 
 use Auth;
 
