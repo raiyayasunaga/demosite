@@ -1953,8 +1953,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     // ここ入らないのかも
@@ -37575,28 +37573,6 @@ var render = function() {
         on: { click: _vm.Stop }
       },
       [_vm._v("止める")]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "moveslowbutton btn btn-outline-primary",
-        on: { click: _vm.Stop }
-      },
-      [_vm._v("減速")]
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "movebutton btn btn-outline-primary",
-        on: {
-          click: function($event) {
-            return _vm.moveToDown()
-          }
-        }
-      },
-      [_vm._v("加速")]
     ),
     _vm._v(" "),
     _c("div", { staticClass: "row mt-3" }, [

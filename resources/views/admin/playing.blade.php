@@ -5,23 +5,84 @@
 @section('content')
     <div class="container">
       <!-- user_idとidが一致したやつだけ -->
-          <div class="row my-4">
+        <div class="row my-4">
         <!-- ifを使ってカラムによって表示を変える方法を実装 -->
             <h2>曲のタイトル：{{ str_limit($music->title, 100) }}</h2>
             <div class="ml-3">
               <img src="{{ $music->user->profile_image }}" style="border: none; width:50px; height:auto; border-radius: 50px;" id="img">
             </div>
-          </div>
-          <div class="row mb-5">
-            <h3 class="col-4">カポ：{{ ($music->capo) }}</h3>
-            <h3 class="col-4">カテゴリー：{{ ($music->category) }}</h3>
+        </div>
+        <div class="row mb-5">
+                <div class="col-md-6">
+                    <select class="form-control mb-3" name = "capo">
+                        @switch ($music->capo)
+                            @case('+7')
+                                <option selected value="+7">+7</option>
+                            @break
+                            @case('+6')
+                                <option selected value="+6">+6</option>
+                            @break
+                            @case('+5')
+                                <option selected value="+5">+5</option>
+                            @break
+                            @case('+4')
+                                <option selected value="+4">+4</option>
+                            @break
+                            @case('+3')
+                                <option selected value="+3">+3</option>
+                            @break
+                            @case('+2')
+                                <option selected value="+2">+2</option>
+                            @break
+                            @case('+1')
+                                <option selected value="+1">+1</option>
+                            @break
+                            @case('±0')
+                                <option selected value="±0">±0</option>
+                            @break
+                            @case('半音')
+                                <option selected value="半音">半音</option>
+                            @break
+                            @default
+                                <option selsected value="±0">±0</option>
+                        @endswitch
+
+
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control mb-3" name="category">
+                         @switch ($music->category)
+                                @case('洋楽')
+                                    <option selected value="洋楽">洋楽</option>
+                                @break
+                                @case('Jpop')
+                                    <option selected value="Jpop">Jpop</option>
+                                @break
+                                @case('ロック')
+                                    <option selected value="ロック">ロック</option>
+                                @break
+                                @case('アニソン')
+                                    <option selected value="アニソン">アニソン</option>
+                                @break
+                                @case('ジブリ')
+                                    <option selected value="ジブリ">ジブリ</option>
+                                @break
+                                @case('なし')
+                                    <option selected value="なし">なし</option>
+                                @break
+                                @default
+                                    <option selected value="なし">なし</option>
+                                @endswitch
+                               
+                    </select>
+                </div>
          </div>
 
-        <div id="app">
-          <roll-component></roll-component>
-        </div>
-        <div>
-        <h3>曲の歌詞</h3>
+            <div id="app">
+                <roll-component></roll-component>
+            </div>
+        <h3 class="mb-5">曲の歌詞</h3>
 
         <div id="lyrics"> 
             <div class="row">
@@ -30,8 +91,7 @@
                 @endif
             </div>
         </div>
-        <h2 class="my-5">終わり</h2>
-
+        <h2 class="my-5"><a href="home">演奏終了ホームへ</a></h2>
     </div>
 @endsection
 

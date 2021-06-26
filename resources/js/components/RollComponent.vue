@@ -1,8 +1,6 @@
 <template>
     <div class="container">
         <button class="stopbutton btn btn-outline-primary" @click="Stop">止める</button>
-        <button class="moveslowbutton btn btn-outline-primary" @click="Stop">減速</button>
-        <button class="movebutton btn btn-outline-primary" @click="moveToDown()">加速</button>
             <!-- 運搬止まらずむしろ早くなっている -->
                 <div class="row mt-3">スクロール速度
                     <select class="form-control mb-3" v-model="speedNumber" @change="select">

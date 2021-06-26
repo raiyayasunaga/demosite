@@ -291,7 +291,7 @@
             </div>
 
                 <div class="creata-text">
-                    <textarea placeholder="歌詞、コードを入力　例: [C]君を忘れな[G]い" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 134px; width: 1055px;"></textarea>
+                    <textarea placeholder="歌詞、コードを入力　例: [C]君を忘れな[G]い" name="lyrics" class="form-control" onkeyup="origindata()" id="origin-data" rows="5" value="{{ old('lyrics') }}" style="height: 200px;"></textarea>
                 </div>
                 
                     <p class="col-12 my-5" id="preview">
