@@ -35,6 +35,7 @@ body {
     <div class="container">
         <div class="row py-3">
             <h2>公開一覧</h2>
+            <a class="btn btn-success ml-5" href="https://youtu.be/Av53jnbqaPE">具体的な説明動画へ</a>
         </div>
         <div class="row">
             <div class="col-md-8">

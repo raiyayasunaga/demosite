@@ -282,7 +282,7 @@
                 </div>
                 <div class="mb-3 col-md-6 desc-text">
                     <h4>コードの書き方</h4>
-                    <a class="btn btn-success p-1" href="https://youtu.be/y39JETb9gjo">具体的な説明動画へ</a>
+                    <a class="btn btn-success p-1" href="https://youtu.be/Av53jnbqaPE">具体的な説明動画へ</a>
                     <p>キーを選択するとその下によく使うコードが表示されます。</p>
                     <p>入力するとプレビューが表示されるのでプレビューを見ながら簡単に作れます。</p>
                     <p>コードチェンジをしたい歌詞の前にコードを置いてください。<br>
