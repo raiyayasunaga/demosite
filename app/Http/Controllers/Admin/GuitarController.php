@@ -52,6 +52,7 @@ class GuitarController extends Controller
       $music->user_id = Auth::id();
       $music->save();
 
+      session()->flash('flash_message', '曲が完成しました');
       return redirect('admin/mypage');
     }
 
@@ -121,6 +122,8 @@ class GuitarController extends Controller
       $music = Music::find($request->id);
       // 削除する
       $music->delete();
+
+      session()->flash('flash_message', '投稿が削除されました');
       return redirect('admin/mypage/');
     }
 

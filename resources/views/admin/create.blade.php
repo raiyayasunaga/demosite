@@ -37,7 +37,7 @@
                 </select>
             </div>
             <label class="col-md-1" for="capo">カポ数</label>
-                <div class="col-5">
+                <div class="col-md-5">
                     <select class="form-control mb-3" name = "capo" value="{{ old('capo') }}">
                         <option value="半音"  @if(old('capo')=='半音') selected  @endif>半音</option>
                         <option value="±0" selected @if(old('capo')=='±0') selected  @endif>±0</option>
@@ -282,8 +282,8 @@
                 </div>
                 <div class="mb-3 col-md-6 desc-text">
                     <h4>コードの書き方</h4>
-                    <p>キーを選択するとその下によく使うコードが表示されます。<br>
-                    コード名のボタンを押すことで簡単にコードが入力できます</p>
+                    <a class="btn btn-success p-1" href="https://youtu.be/y39JETb9gjo">具体的な説明動画へ</a>
+                    <p>キーを選択するとその下によく使うコードが表示されます。</p>
                     <p>入力するとプレビューが表示されるのでプレビューを見ながら簡単に作れます。</p>
                     <p>コードチェンジをしたい歌詞の前にコードを置いてください。<br>
                     例: [C]君を忘れな[G]い</p>
@@ -306,8 +306,9 @@
 @section('js')
 <script>
     //セレクトでボタンの種類を変える
-    
-    function keyChange() {
+
+    function keyChange() 
+    {
         if(document.getElementById('selectCords')){
             id = document.getElementById('selectCords').value;
             if(id == '1') {
@@ -490,7 +491,7 @@
 
 
 
-    function origindata() {
+function origindata() {
   let input = document.getElementById( "origin-data" ).value;
   let result = input.replace(/\[.*?]|\n/g, cords);
   function cords(match){
@@ -695,7 +696,7 @@
             return '<img src="/img/Em6.png">';
             break;
         case '[Em7]':
-            return '<img src="/img/Em7.png">';
+            return '<img src="/img/E_m7.png">';
             break;
         case '[Em7-5]':
             return '<img src="/img/Emb5.png">';
@@ -1045,7 +1046,7 @@
     }
   }
   document.getElementById( "preview" ).innerHTML = result;
-
 } 
+
 </script>
 @endsection

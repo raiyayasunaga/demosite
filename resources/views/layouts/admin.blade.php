@@ -25,6 +25,10 @@
             <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
             
+            <!-- トースト -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
             <!-- Styles -->
             {{-- 何故かassetsに定義されていた --}}
             <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
@@ -150,6 +154,11 @@
                 </main>
             </div>
             <script>
+             @if (session('flash_message'))
+                $(function () {
+                        toastr.success('{{ session('flash_message') }}');
+                });
+            @endif
                 // 声
                 @guest
                 @else
